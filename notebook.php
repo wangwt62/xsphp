@@ -57,7 +57,7 @@
 			echo "{$username}说：{$title}, {$msg}<hr/>";
 		}
 		flock($fh, LOCK_UN);
-		fcolse($fh);
+		fclose($fh);
 	}
 ?>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method='post'>
