@@ -35,10 +35,9 @@
 			fwrite($fh, $msg);
 			flock($fh, LOCK_UN);
 		} else {
-			return 1;
+			echo "不能锁定文件";
 		}
 		fclose($fh);
-		return 0;
 	}
 	/**
 	 * readMessage函数，读取留言信息
@@ -54,7 +53,9 @@
 		$messages = explode("<|>", $buffer);
 		foreach($messages as $message) {
 			list($username, $title, $msg) = explode("||", $message);
-			echo "{$username}说：{$title}, {$msg}<hr/>";
+			if(!empty($username) && !empty($title) && !empty($msg)) {
+				echo "{$username}说：{$title}, {$msg}<hr/>";
+			}
 		}
 		flock($fh, LOCK_UN);
 		fclose($fh);
