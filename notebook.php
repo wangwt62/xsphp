@@ -6,7 +6,7 @@
 </head>
 <body>
 <?php
-	$filename = "notebook.txt";
+	$filename = "./files/notebook.txt";
 	/**
 	 * 如果提交留言信息，将留言信息写入文本文件
 	 */
