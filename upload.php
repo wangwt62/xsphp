@@ -1,4 +1,5 @@
 <?php
+echo "<meta http-equiv='Content-Type' content='text/html;charset=utf-8'>";
 $allowtype = array('gif', 'png', 'jpg');
 $size = 1000000;
 $path = './uploads';
